@@ -5,17 +5,22 @@ This Nagios plugin monitors the Apache server log file in search of State 404, r
 
 
 Mandatory arguments: The following arguments must be specified whenever the module is executed:
--p or – path used to specify the path of the Apache log file.
--c or – critical used to specify the values from which to be considered critical situation, this argument receives two values, one for the general case, i.e. total number of errors encountered, and the other for the number of errors per IP address.
--w or – warning used to specify the values from which the script should consider the result as warning, the resemblance of the-c this argument is also twofold.
+
+-p or --path used to specify the path of the Apache log file.
+
+-c or --critical used to specify the values from which to be considered critical situation, this argument receives two values, one for the general case, i.e. total number of errors encountered, and the other for the number of errors per IP address.
+
+-w or --warning used to specify the values from which the script should consider the result as warning, the resemblance of the -c this argument is also twofold.
 
 Optional arguments: The following arguments are optionally invoked, as required by the user:
--n or – number used to specify the number of rows to read in the log file.
--V or – version used to query the module version.
--A or – author used to query the author's data.
+
+-n or --number used to specify the number of rows to read in the log file.
+
+-V or --version used to query the module version.
+
+-A or --author used to query the author's data.
 
 Command-Line Execution example:
 
-./check_apache404.py -p /var/log/apache2/access.log -c 300,200
--w 200,150 -n 1000
+./check_apache404.py -p /var/log/apache2/access.log -c 300,200 -w 200,150 -n 1000
 
